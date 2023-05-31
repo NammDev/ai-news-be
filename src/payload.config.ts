@@ -8,7 +8,7 @@ import Media from './collections/Media'
 
 export default buildConfig({
   // make sure to adjust
-  serverURL: process.env.PAYLOAD_URL,
+  serverURL: `https://${process.env.PAYLOAD_URL}`,
   admin: {
     user: Users.slug,
   },
