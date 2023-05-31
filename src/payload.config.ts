@@ -8,15 +8,16 @@ import Media from './collections/Media'
 
 export default buildConfig({
   // make sure to adjust
-  serverURL: `https://${process.env.PAYLOAD_URL}`,
+  // https://ai-news-be-production.up.railway.app
+  serverURL: `https://ai-news-be-production.up.railway.app`,
   admin: {
     user: Users.slug,
   },
   collections: [Categories, Posts, Tags, Users, Media],
-  typescript: {
-    outputFile: path.resolve(__dirname, 'payload-types.ts'),
-  },
-  graphQL: {
-    schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
-  },
+  // typescript: {
+  //   outputFile: path.resolve(__dirname, 'payload-types.ts'),
+  // },
+  // graphQL: {
+  //   schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
+  // },
 })
