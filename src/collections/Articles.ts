@@ -1,32 +1,43 @@
-import { CollectionConfig } from 'payload/types';
+import { CollectionConfig } from 'payload/types'
 
-const Posts: CollectionConfig = {
-  slug: 'posts',
+const Articles: CollectionConfig = {
+  slug: 'articles',
   admin: {
-    defaultColumns: ['title', 'author', 'category', 'tags', 'status'],
+    defaultColumns: ['title', 'author', 'description', 'category', 'tags', 'status'],
     useAsTitle: 'title',
   },
   access: {
     read: () => true,
   },
+  timestamps: true,
   fields: [
     {
       name: 'title',
       type: 'text',
+      required: true,
+    },
+    {
+      name: 'headlineimage',
+      type: 'upload',
+      relationTo: 'media',
+      required: true,
     },
     {
       name: 'author',
       type: 'relationship',
-      relationTo: 'users',
+      relationTo: 'authors',
+      required: true,
     },
     {
-      name: 'publishedDate',
-      type: 'date',
+      name: 'description',
+      type: 'text',
+      required: true,
     },
     {
       name: 'category',
       type: 'relationship',
-      relationTo: 'categories'
+      relationTo: 'categories',
+      required: true,
     },
     {
       name: 'tags',
@@ -36,7 +47,8 @@ const Posts: CollectionConfig = {
     },
     {
       name: 'content',
-      type: 'richText'
+      type: 'richText',
+      required: true,
     },
     {
       name: 'status',
@@ -54,9 +66,9 @@ const Posts: CollectionConfig = {
       defaultValue: 'draft',
       admin: {
         position: 'sidebar',
-      }
-    }
+      },
+    },
   ],
 }
 
-export default Posts;
+export default Articles

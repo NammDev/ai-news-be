@@ -1,19 +1,22 @@
 import { buildConfig } from 'payload/config'
 import path from 'path'
 import Categories from './collections/Categories'
-import Posts from './collections/Posts'
 import Tags from './collections/Tags'
 import Users from './collections/Users'
 import Media from './collections/Media'
+import Articles from './collections/Articles'
+import Authors from './collections/Authors'
 
 export default buildConfig({
   // make sure to adjust
-  // https://ai-news-be-production.up.railway.app
-  serverURL: `https://ai-news-be-production.up.railway.app`,
+  // serverURL: `https://ai-news-be-production.up.railway.app`,
+
+  serverURL: `http://localhost:8000`,
+  collections: [Articles, Authors, Categories, Tags, Users, Media],
   admin: {
     user: Users.slug,
+    css: path.resolve(__dirname, '../stylesheet.scss'),
   },
-  collections: [Categories, Posts, Tags, Users, Media],
   // typescript: {
   //   outputFile: path.resolve(__dirname, 'payload-types.ts'),
   // },

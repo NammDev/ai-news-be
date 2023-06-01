@@ -1,5 +1,5 @@
-import path from 'path';
-import type { CollectionConfig } from 'payload/types';
+import path from 'path'
+import type { CollectionConfig } from 'payload/types'
 
 const Media: CollectionConfig = {
   slug: 'media',
@@ -22,7 +22,17 @@ const Media: CollectionConfig = {
       },
     ],
   },
-  fields: [],
-};
+  fields: [
+    {
+      name: 'alt',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'caption',
+      type: 'richText',
+    },
+  ],
+}
 
-export default Media;
+export default Media

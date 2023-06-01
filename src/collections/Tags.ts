@@ -1,4 +1,4 @@
-import { CollectionConfig } from 'payload/types';
+import { CollectionConfig } from 'payload/types'
 
 const Tags: CollectionConfig = {
   slug: 'tags',
@@ -17,4 +17,4 @@ const Tags: CollectionConfig = {
   timestamps: false,
 }
 
-export default Tags;
+export default Tags
