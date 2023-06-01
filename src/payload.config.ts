@@ -15,7 +15,7 @@ export default buildConfig({
   collections: [Articles, Authors, Categories, Tags, Users, Media],
   admin: {
     user: Users.slug,
-    css: path.resolve(__dirname, '../stylesheet.scss'),
+    css: path.resolve(__dirname, 'stylesheet.scss'),
   },
   // typescript: {
   //   outputFile: path.resolve(__dirname, 'payload-types.ts'),
