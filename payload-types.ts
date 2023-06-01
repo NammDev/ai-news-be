@@ -19,6 +19,7 @@ export interface Config {
 export interface Article {
   id: string;
   title: string;
+  slug?: string;
   headlineimage: string | Media;
   author: string | Author;
   description: string;
