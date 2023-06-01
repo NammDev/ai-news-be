@@ -9,9 +9,9 @@ import Authors from './collections/Authors'
 
 export default buildConfig({
   // make sure to adjust
-  // serverURL: `https://ai-news-be-production.up.railway.app`,
+  serverURL: `https://ai-news-be-production.up.railway.app`,
 
-  serverURL: `http://localhost:8000`,
+  // serverURL: `http://localhost:8000`,
   collections: [Articles, Authors, Categories, Tags, Users, Media],
   admin: {
     user: Users.slug,
