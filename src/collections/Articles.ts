@@ -4,7 +4,6 @@ import { slugField } from '../fields/slug'
 const Articles: CollectionConfig = {
   slug: 'articles',
   admin: {
-    defaultColumns: ['title', 'author', 'description', 'category', 'tags', 'status'],
     useAsTitle: 'title',
   },
   access: {
@@ -13,44 +12,52 @@ const Articles: CollectionConfig = {
   timestamps: true,
   fields: [
     {
-      name: 'title',
-      type: 'text',
-      required: true,
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Nội Dung',
+          fields: [
+            {
+              name: 'title',
+              type: 'text',
+              required: true,
+            },
+            {
+              name: 'previewImage',
+              type: 'upload',
+              relationTo: 'media',
+              required: true,
+            },
+            {
+              name: 'category',
+              type: 'relationship',
+              relationTo: 'categories',
+              required: true,
+            },
+            {
+              name: 'content',
+              type: 'richText',
+              required: true,
+            },
+            {
+              name: 'tags',
+              type: 'relationship',
+              relationTo: 'tags',
+              hasMany: true,
+            },
+          ],
+        },
+      ],
     },
     slugField(),
-    {
-      name: 'headlineimage',
-      type: 'upload',
-      relationTo: 'media',
-      required: true,
-    },
     {
       name: 'author',
       type: 'relationship',
       relationTo: 'authors',
       required: true,
-    },
-    {
-      name: 'description',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'category',
-      type: 'relationship',
-      relationTo: 'categories',
-      required: true,
-    },
-    {
-      name: 'tags',
-      type: 'relationship',
-      relationTo: 'tags',
-      hasMany: true,
-    },
-    {
-      name: 'content',
-      type: 'richText',
-      required: true,
+      admin: {
+        position: 'sidebar',
+      },
     },
     {
       name: 'status',

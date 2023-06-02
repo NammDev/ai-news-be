@@ -22,8 +22,8 @@ const start = async () => {
   })
 
   // Add your own express routes here
-  // app.listen(8000)
-  app.listen(3000)
+  app.listen(8000)
+  // app.listen(3000)
 }
 
 start()
