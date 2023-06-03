@@ -27,9 +27,9 @@ export default buildConfig({
   plugins: [
     seo({
       collections: ['articles'],
-      uploadsCollection: 'media',
       tabbedUI: true,
-      generateTitle: ({ doc }) => `${doc.}`,
+      generateTitle: ({ doc }: any) => doc?.title?.value,
+      generateDescription: ({ doc }: any) => doc?.excerpt?.value,
     }),
   ],
 })

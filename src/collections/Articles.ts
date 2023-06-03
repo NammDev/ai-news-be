@@ -29,6 +29,11 @@ const Articles: CollectionConfig = {
               required: true,
             },
             {
+              name: 'excerpt',
+              type: 'text',
+              required: true,
+            },
+            {
               name: 'category',
               type: 'relationship',
               relationTo: 'categories',
