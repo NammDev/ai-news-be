@@ -30,16 +30,10 @@ const format = (val: string): string =>
 const formatSlug =
   (fallback: string): FieldHook =>
   ({ operation, value, originalDoc, data }) => {
-    if (typeof value === 'string') {
-      return format(value)
-    }
+    const fallbackData = (data && data[fallback]) || (originalDoc && originalDoc[fallback])
 
-    if (operation === 'create') {
-      const fallbackData = data?.[fallback] || originalDoc?.[fallback]
-
-      if (fallbackData && typeof fallbackData === 'string') {
-        return format(fallbackData)
-      }
+    if (fallbackData && typeof fallbackData === 'string') {
+      return format(fallbackData)
     }
 
     return value

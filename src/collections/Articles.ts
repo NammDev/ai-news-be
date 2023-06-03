@@ -1,5 +1,5 @@
 import { CollectionConfig } from 'payload/types'
-import { slugField } from '../fields/slug'
+import slug from '../fields/slug'
 
 const Articles: CollectionConfig = {
   slug: 'articles',
@@ -54,7 +54,7 @@ const Articles: CollectionConfig = {
         },
       ],
     },
-    slugField(),
+    slug(),
     {
       name: 'author',
       type: 'relationship',
