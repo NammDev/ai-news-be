@@ -1,4 +1,3 @@
-import { Article } from './../payload-types'
 import { buildConfig } from 'payload/config'
 import path from 'path'
 import Categories from './collections/Categories'
