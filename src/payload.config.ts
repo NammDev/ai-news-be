@@ -9,7 +9,7 @@ import Authors from './collections/Authors'
 import seo from '@payloadcms/plugin-seo'
 
 export default buildConfig({
-  serverURL: `${process.env.SERVER_URL}`,
+  serverURL: `https://${process.env.PAYLOAD_URL}`,
   collections: [Articles, Authors, Categories, Tags, Users, Media],
   admin: {
     user: Users.slug,
