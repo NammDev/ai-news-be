@@ -23,7 +23,7 @@ const Articles: CollectionConfig = {
               required: true,
             },
             {
-              name: 'previewImage',
+              name: 'preview',
               type: 'upload',
               relationTo: 'media',
               required: true,
