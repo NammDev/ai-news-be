@@ -9,7 +9,7 @@ import Authors from './collections/Authors'
 import seo from '@payloadcms/plugin-seo'
 
 export default buildConfig({
-  serverURL: `https://${process.env.PAYLOAD_URL}`,
+  serverURL: `https://ai-news-be-production.up.railway.app`,
   collections: [Articles, Authors, Categories, Tags, Users, Media],
   admin: {
     user: Users.slug,
